@@ -9,7 +9,7 @@ This is the React-based frontend for the **AI Resume Analyzer** web application.
    npm install
 2. Start the development server
 
-npm start
+   npm start
 
 The app will run at http://localhost:3000
 
