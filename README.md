@@ -84,7 +84,34 @@ npm start
 The app will start locally at: http://localhost:3000
  (React) or 
  http://127.0.0.1:5000
- (Flask).
+ (Flask). 
+
+ ---
+
+## 🎨 UI/UX Design
+
+The user interface for **AI Resume Analyzer** was designed in **Figma**, following a clean, modern, and responsive layout inspired by ATS dashboards.
+
+### 🖼️ Design Previews
+
+#### Upload Page
+![Upload Page](static/upload_page.png)
+
+#### Results Dashboard
+![Results Dashboard](static/results_dashboard.png)
+
+### 📄 Complete Design File
+- [📘 View Live Figma Design](https://www.figma.com/make/rsI30ILzJSu0YTIm8aBANC/AI-Resume-Analyzer-Interface?node-id=0-1&p=f&t=YP6hAkcbT3gDRPar-0&fullscreen=1)  
+- [📄 Download PDF (UI Design)](static/AI_Resume_Analyzer_UI_Design.pdf)
+
+**Highlights:**
+- Simple upload interface with job description input  
+- Dashboard showing ATS Match Score, Detected & Missing Skills  
+- Pastel theme: light blue (#3b49df) accents with white cards  
+- Responsive layout optimized for web and mobile  
+
+---
+
 
 🧮 How It Works
 
