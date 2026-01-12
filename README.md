@@ -1,158 +1,206 @@
 # 🧠 AI Resume Analyzer
 
-An AI-powered web application that evaluates resumes against job descriptions to generate an **ATS-style compatibility score**, highlight missing skills, and suggest improvements.  
-Built using **Python (Flask/FastAPI)**, **NLP**, and an interactive **React/Streamlit frontend**.
+**AI Resume Analyzer** is a web application that evaluates resumes against job descriptions to generate an **ATS-style compatibility score**, highlight missing skills, and provide actionable improvement suggestions.
+Built with **Python (Flask/FastAPI)**, **NLP**, and an interactive **React/Streamlit frontend**, it helps job seekers optimize resumes and recruiters screen candidates faster.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 📤 **Resume Upload** – Accepts PDF or DOCX files and extracts text automatically.  
-- 🧾 **Job Description Input** – Paste a JD or upload a text file.  
-- 🧠 **NLP-Based Analysis** – Uses TF-IDF / spaCy / Transformer embeddings to compare keywords and compute similarity score.  
-- 📊 **ATS Match Score** – Displays how well the resume fits the JD.  
-- 🧩 **Missing Keywords & Skills** – Highlights skills that can improve the match.  
-- 💡 **Improvement Suggestions** – Generates brief, actionable feedback.  
-- 📈 **Interactive Dashboard** – Visualizes skill overlap and match distribution.
+* 📤 **Resume Upload** – Accept PDF or DOCX files; automatic text extraction.
+* 🧾 **Job Description Input** – Paste JD or upload a text file.
+* 🧠 **AI-Powered Analysis** – Uses TF-IDF, spaCy, or Transformer embeddings to compute resume-JD similarity.
+* 📊 **ATS Match Score** – Shows percentage match between resume and job description.
+* 🧩 **Missing Keywords & Skills** – Highlights skills that can improve your match.
+* 💡 **Actionable Feedback** – Provides brief, practical suggestions.
+* 📈 **Interactive Dashboard** – Visualizes skill overlap and match distribution.
 
 ---
 
 ## 🧰 Tech Stack
 
-| Layer | Technologies |
-|--------|---------------|
-| **Frontend** | React / Streamlit, HTML5, CSS3 |
-| **Backend** | Flask / FastAPI |
-| **ML / NLP** | Python, spaCy, scikit-learn, NLTK, TF-IDF, Hugging Face Transformers |
-| **Data Handling** | pdfplumber, docx2txt, pandas |
-| **Deployment** | Render / Streamlit Cloud / Hugging Face Spaces |
-| **Version Control** | Git, GitHub |
+| Layer               | Technologies                                                         |
+| ------------------- | -------------------------------------------------------------------- |
+| **Frontend**        | React / Streamlit, HTML5, CSS3                                       |
+| **Backend**         | Flask / FastAPI                                                      |
+| **ML / NLP**        | Python, spaCy, scikit-learn, NLTK, TF-IDF, Hugging Face Transformers |
+| **Data Handling**   | pdfplumber, docx2txt, pandas                                         |
+| **Deployment**      | Render, Streamlit Cloud, Hugging Face Spaces                         |
+| **Version Control** | Git, GitHub                                                          |
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
 
+```
 AI-Resume-Analyzer/
 │
 ├── backend/
-│ ├── app.py # Flask/FastAPI API
-│ ├── model.py # NLP similarity & keyword extraction
-│ ├── utils.py # Helper functions
-│ ├── requirements.txt
-│ └── uploads/ # Temporary uploaded resumes
+│   ├── app.py           # Flask/FastAPI API
+│   ├── model.py         # NLP similarity & keyword extraction
+│   ├── utils.py         # Helper functions
+│   ├── requirements.txt
+│   └── uploads/         # Temporary uploaded resumes
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── ResumeUpload.js
-│ │ │ ├── JobDescInput.js
-│ │ │ ├── ResultsCard.js
-│ │ └── App.js
-│ └── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── ResumeUpload.js
+│   │   │   ├── JobDescInput.js
+│   │   │   └── ResultsCard.js
+│   │   └── App.js
+│   └── package.json
 │
 ├── notebooks/
-│ └── prototype.ipynb # Early experimentation
+│   └── prototype.ipynb  # Early experimentation
 │
-├── static/ # (optional) screenshots for README
+├── static/              # Screenshots for README
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Local Setup & Installation
 
-1️⃣ Clone the Repository
+Follow these steps to run **AI Resume Analyzer** on your local machine.
 
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/DishaChakraborty-11/AI-Resume-Analyzer.git
 cd AI-Resume-Analyzer
-
-2️⃣ Backend Setup
-
-cd backend
-python -m venv venv
-source venv/bin/activate       # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-
-3️⃣ Frontend Setup (if React)
-
-cd ../frontend
-npm install
-npm start
-
-The app will start locally at: http://localhost:3000
- (React) or 
- http://127.0.0.1:5000
- (Flask). 
-
- ---
-
-## 🎨 UI/UX Design
-
-The user interface for **AI Resume Analyzer** was designed in **Figma**, following a clean, modern, and responsive layout inspired by ATS dashboards.
-
-### 🖼️ Design Previews
-
-#### Upload Page
-![Upload Page](static/upload_page.png)
-
-#### Results Dashboard
-![Results Dashboard](static/results_dashboard.png)
-
-### 📄 Complete Design File
-- [📘 View Live Figma Design](https://www.figma.com/make/rsI30ILzJSu0YTIm8aBANC/AI-Resume-Analyzer-Interface?node-id=0-1&p=f&t=YP6hAkcbT3gDRPar-0&fullscreen=1)  
-- [📄 Download PDF (UI Design)](static/AI_Resume_Analyzer_UI_Design.pdf)
-
-**Highlights:**
-- Simple upload interface with job description input  
-- Dashboard showing ATS Match Score, Detected & Missing Skills  
-- Pastel theme: light blue (#3b49df) accents with white cards  
-- Responsive layout optimized for web and mobile  
+```
 
 ---
 
+### 2️⃣ Backend Setup (Flask/FastAPI)
 
-🧮 How It Works
+1. Create a Python virtual environment:
 
-Text Extraction: Extract text from uploaded resume and job description.
+```bash
+cd backend
+python -m venv venv
+```
 
-Preprocessing: Clean, tokenize, and lemmatize using spaCy.
+2. Activate the virtual environment:
 
-Vectorization: Convert text into vectors via TF-IDF or sentence embeddings.
+* **Windows**:
 
-Similarity Scoring: Compute cosine similarity between resume & JD.
+```bash
+venv\Scripts\activate
+```
 
-Skill Extraction: Identify missing or extra skills using keyword matching or NER.
+* **Mac/Linux**:
 
-Visualization: Render results on the frontend dashboard.
+```bash
+source venv/bin/activate
+```
 
-📊 Example Output
-Metric	Example Value
-ATS Match Score	82%
-Missing Keywords	Python, Flask, TensorFlow
-Key Strengths	NLP, Model Deployment, Data Analysis
+3. Install dependencies:
 
-(This table updates dynamically once you upload a resume.)
+```bash
+pip install -r requirements.txt
+```
 
-💡 Future Enhancements
+4. (Optional) Set environment variables:
+   If your backend requires API keys or configs, create a `.env` file in `backend/`:
 
-Integrate LLM (Gemini/OpenAI) for richer feedback.
+```text
+API_KEY=your_api_key_here
+OTHER_CONFIG=value
+```
 
-Add profile recommendations (e.g., best-fit roles).
+5. Run the backend server:
 
-Store analysis history with MongoDB.
+```bash
+python app.py
+```
 
-Deploy full stack to Render or GCP for live use.
+The API will start at: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
-👩‍💻 Author
+---
 
-Disha Chakraborty
+### 3️⃣ Frontend Setup (React)
+
+1. Navigate to the frontend folder:
+
+```bash
+cd ../frontend
+```
+
+2. Install frontend dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+The frontend will run at: [http://localhost:3000](http://localhost:3000)
+
+> ⚠️ Make sure the backend is running before using the frontend.
+
+---
+
+## 🖼️ Example Usage
+
+**Upload Resume & Job Description**
+![Upload Page](static/upload_page.png)
+
+**Results Dashboard**
+![Results Dashboard](static/results_dashboard.png)
+
+* The dashboard shows:
+
+  * **ATS Match Score**
+  * **Detected vs Missing Skills**
+  * **Improvement Suggestions**
+
+---
+
+## 🧮 How It Works
+
+1. **Text Extraction** – Extracts text from uploaded resume and job description.
+2. **Preprocessing** – Clean, tokenize, and lemmatize text using spaCy.
+3. **Vectorization** – Converts text to vectors using TF-IDF or sentence embeddings.
+4. **Similarity Scoring** – Computes cosine similarity between resume & JD.
+5. **Skill Extraction** – Identifies missing or extra skills using keyword matching / NER.
+6. **Visualization** – Displays results in a clean, interactive dashboard.
+
+### Example Output
+
+| Metric           | Example Value                        |
+| ---------------- | ------------------------------------ |
+| ATS Match Score  | 82%                                  |
+| Missing Keywords | Python, Flask, TensorFlow            |
+| Key Strengths    | NLP, Model Deployment, Data Analysis |
+
+---
+
+## 💡 Future Enhancements
+
+* Integrate **LLMs (Gemini/OpenAI)** for richer feedback.
+* Add **profile recommendations** (best-fit roles).
+* Store **analysis history** in MongoDB.
+* Deploy full-stack to **Render / GCP** for live use.
+
+---
+
+## 👩‍💻 Author
+
+**Disha Chakraborty**
 B.Tech CSE (AI & ML) | Kolkata, India
-🌐 GitHub | LinkedIn
+🌐 [GitHub](https://github.com/DishaChakraborty-11) | [LinkedIn](https://www.linkedin.com/in/dishachakraborty)
 
-🪪 License
+---
 
-This project is licensed under the MIT License – see the LICENSE
- file for details.
+## 🪪 License
 
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+---
